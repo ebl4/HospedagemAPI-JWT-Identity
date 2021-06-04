@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace HospedagemAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     [Authorize("Bearer")]
     public class AcomodacoesController : ControllerBase
     {

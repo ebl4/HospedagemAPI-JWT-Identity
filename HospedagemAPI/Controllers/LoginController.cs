@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HospedagemAPI.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class LoginController : ControllerBase
     {
         [AllowAnonymous]

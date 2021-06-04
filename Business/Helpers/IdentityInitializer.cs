@@ -3,9 +3,6 @@ using Domain.Model;
 using Microsoft.AspNetCore.Identity;
 using Persistence.Context;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace HospedagemAPI.Security
 {
@@ -26,27 +23,27 @@ namespace HospedagemAPI.Security
         {
             if (_context.Database.EnsureCreated())
             {
-                if (!_roleManager.RoleExistsAsync(Roles.ROLE_API_ACOMODACOES).Result)
+                if (!_roleManager.RoleExistsAsync(Roles.ROLE_HOSPEDAGEM_API).Result)
                 {
-                    var result = _roleManager.CreateAsync(new IdentityRole(Roles.ROLE_API_ACOMODACOES)).Result;
-                    if (!result.Succeeded) throw new Exception($"Erro durante a criação da role {Roles.ROLE_API_ACOMODACOES}");
+                    var result = _roleManager.CreateAsync(new IdentityRole(Roles.ROLE_HOSPEDAGEM_API)).Result;
+                    if (!result.Succeeded) throw new Exception($"Erro durante a criação da role {Roles.ROLE_HOSPEDAGEM_API}");
                 }
 
                 CreateUser(
                     new ApplicationUser()
                     {
-                        UserName = "admin_apiacomodacoes",
-                        Email = "admin-apiacomodacoes@teste.com.br",
+                        UserName = "admin_hospedagemAPI",
+                        Email = "admin-hospedagemAPI@teste.com.br",
                         EmailConfirmed = true
-                    }, "AdminAPIAcomodacoes01!", Roles.ROLE_API_ACOMODACOES);
+                    }, "AdminHospedagemAPI01!", Roles.ROLE_HOSPEDAGEM_API);
 
                 CreateUser(
                     new ApplicationUser()
                     {
-                        UserName = "usrinvalido_apiacomodacoes",
-                        Email = "usrinvalido-apiacomodacoes@teste.com.br",
+                        UserName = "usrinvalido_hospedagemAPI",
+                        Email = "usrinvalido-hospedagemAPI@teste.com.br",
                         EmailConfirmed = true
-                    }, "UsrInvAPIAcomodacoes01!");
+                    }, "UsrInvHospedagemAPI01!");
             }
         }
 

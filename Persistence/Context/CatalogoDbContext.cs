@@ -9,5 +9,11 @@ namespace Persistence.Context
 
         public DbSet<Acomodacao> Acomodacoes { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Acomodacao>()
+                .HasKey(a => a.Id);
+        }
+
     }
 }

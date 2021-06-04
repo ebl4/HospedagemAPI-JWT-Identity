@@ -14,7 +14,7 @@
 
     public static class Roles
     {
-        public const string ROLE_API_ACOMODACOES = "Acesso-APIAcomodacoes";
+        public const string ROLE_HOSPEDAGEM_API = "Acesso-HospedagemAPI";
     }
 
     public class TokenConfigurations

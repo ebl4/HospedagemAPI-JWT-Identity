@@ -24,6 +24,7 @@ namespace Business.Security
             _userManager = userManager;
             _signInManager = signInManager;
             _signInConfiguration = signingConfigurations;
+            _tokenConfigurations = tokenConfigurations;
         }
 
         public bool ValidateCredentials(AccessCredentials credenciais)
@@ -39,8 +40,8 @@ namespace Business.Security
                     if (resultLogin.Succeeded)
                     {
                         // Verifica se o usuário em questão possui 
-                        // a role Acesso-APIAcomodacoes
-                        credenciaisValidas = _userManager.IsInRoleAsync(userIdentity, Roles.ROLE_API_ACOMODACOES).Result;
+                        // a role Acesso-HospedagemAPI
+                        credenciaisValidas = _userManager.IsInRoleAsync(userIdentity, Roles.ROLE_HOSPEDAGEM_API).Result;
                     }
                 }
             }

@@ -2,20 +2,19 @@
 {
     public class Acomodacao
     {
-        public string Nome { get; private set; }
-        public string Tipo { get; private set; }
-        public decimal Diaria { get; private set; }
-        public string Area { get; private set; }
-        public string Local { get; private set; }
+        private string nome;
+        private string tipo;
+        private decimal diaria;
+        private string area;
+        private string local;
+        private int id;
 
-        public Acomodacao(string nome, string tipo, decimal diaria, string area, string local)
-        {
-            Nome = nome;
-            Tipo = tipo;
-            Diaria = diaria;
-            Area = area;
-            Local = local;
-        }
+        public int Id { get => id; set => id = value; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Tipo { get => tipo; set => tipo = value; }
+        public decimal Diaria { get => diaria; set => diaria = value; }
+        public string Area { get => area; set => area = value; }
+        public string Local { get => local; set => local = value; }
 
     }
 }
